@@ -4,10 +4,10 @@ import React from 'react';
 
 const AstronomyCard = (props) => {
   return (
-    <div className="astronomy-card" key={props.hdurl}>
-      <a href={props.hdurl} className="astronomy-image-wrapper" >
-        <img src={props.url} className="astornomy-image" alt={props.title} />
-      </a>
+    <div className="astronomy-card">
+      <div className="astronomy-image-wrapper" >
+        <img src={props.hdurl} className="astronomy-image" alt={props.title} />
+      </div>
 
       <h2>{props.planetary}</h2>
       {/* <h2>Picture Title: {props.title}</h2> */}
