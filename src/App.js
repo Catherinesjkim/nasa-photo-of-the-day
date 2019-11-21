@@ -1,23 +1,25 @@
 // Add state for the data you'll be getting from NASA.
 import React from "react";
 import AstronomyContainer from "./app/components/AstronomyContainer";
+import AstronomyCard from "./app/components/AstronomyCard"
+import logo from "./assets/logo.jpeg";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      {/* <div className="logo_container">
+      <div className="logo_container">
         <img className="logo" src={logo}
-        alt="NASA oficial logo" /> */}
+        alt="NASA oficial logo" /> 
         <h1>API</h1>
-        <p>
+        <AstronomyContainer />
+        <AstronomyCard />
+        {/* <p>
           Read through the instructions in the README.md file to build your NASA
           app! Have fun 🚀!
-        </p>
-
-
+        </p> */}
       </div>
-    // </div>
+    </div>
   );
 }
 
