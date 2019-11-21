@@ -2,12 +2,15 @@
 // Always returns the same output. Component where data “flows” inside. Mostly used for representing something. Does not include the state, only props!
 import React from 'react';
 
-const AstronomyCard = props => {
+const AstronomyCard = (props) => {
   return (
     <div className="astronomy-card" key={props.hdurl}>
-      <img className="astornomy-image" alt="random pic" src={props.imgUrl}/>
+      <a href={props.hdurl} className="astronomy-image-wrapper" >
+        <img src={props.url} className="astornomy-image" alt={props.title} />
+      </a>
+
       <h2>{props.planetary}</h2>
-      <h2>Picture Title: {props.title}</h2>
+      {/* <h2>Picture Title: {props.title}</h2> */}
       <p>Date: {props.date}</p>
       <div className="bottom">
         <p>Explanation: {props.explanation}</p>

@@ -11,37 +11,38 @@ import AstronomyCard from "./AstronomyCard";
 
 export default function AstronomyContainer() {
   const [pictures, setPictures] = useState([])
-  const [planetary, setPlanetary] = useState("space")
+  // const [planetary, setPlanetary] = useState("space")
+
   // Inside of the method, call a GET request with axios. 
   // Axios returns a promimse, and inside that promise I have access to the data. The data is under response.data.
-  useEffect(() => {
-    axios
-      .get(`https://api.nasa.gov/planetary/${planetary}/apod?api_key=Z8l1YBG6PmB2C9ey0Jn0qiNZSgOhQcS99ws6E5df`)
-      .then(response => {
-        console.log(response.data.message)
-        setPictures(response.data.message)
-      })
-      .catch(error => {
-        console.log("failed to fetch data", error)
-      })
-  }, [planetary]) // empty dependency array - infinite loop will happen without it. Only renders the first time. API calls over & over again. React will re-invoke the effect after every render as default.
+    useEffect(() => {
+      axios
+        .get('https://api.nasa.gov/planetary/apod?api_key=Z8l1YBG6PmB2C9ey0Jn0qiNZSgOhQcS99ws6E5df')
+        .then(response => {
+          console.log(response)
+          setPictures(response.data)
+        })
+        .catch(error => {
+          console.log("failed to fetch data", error)
+        })
+    }, []) // empty dependency array - infinite loop will happen without it. Only renders the first time. API calls over & over again. React will re-invoke the effect after every render as default.
 
   return (
-    <div className="container">
-      <button onClick={() => setPlanetary('Milky')}>Picture of the Day</button>
-      <button onClick={() => setPlanetary('Way')}>Tomorrow's Picture</button>
-      <div className="entry">
-        {pictures.map((picture, index) => { // Array: convert into an Object. 
-        return <AstronomyCard 
-        key={index} 
-        imgUrl={picture} 
-        planetary={planetary}
-        title={picture.title}
-        date={picture.date}
-        explanation={picture.explanation} 
+    <div className="space">
+    {
+      <AstronomyCard 
+        date={pictures.date}
+        title={pictures.title}
+        hdurl={pictures.hdurl}
+        explanation={pictures.explanation} 
         />
-      })}
+      }
       </div>
-    </div>
   );
 }
+
+{/* <button onClick={() => setPictures('Milky')}>Picture of the Day</button>
+  <button onClick={() => setPictures('Way')}>Tomorrow's Picture</button>  
+<div className="entry">
+        {pictures.map((picture, index) => {
+*/}
