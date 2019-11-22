@@ -26,7 +26,8 @@ export default function AstronomyContainer() {
           console.log("failed to fetch data", error)
         })
     }, []) // empty dependency array - infinite loop will happen without it. Only renders the first time. API calls over & over again. React will re-invoke the effect after every render as default.
-
+    console.log(pictures);
+    
   return (
     <div className="space">
     {
