@@ -11,7 +11,6 @@ import AstronomyCard from "./AstronomyCard";
 
 export default function AstronomyContainer() {
   const [pictures, setPictures] = useState([])
-  // const [planetary, setPlanetary] = useState("space")
 
   // Inside of the method, call a GET request with axios. 
   // Axios returns a promimse, and inside that promise I have access to the data. The data is under response.data.
@@ -41,9 +40,3 @@ export default function AstronomyContainer() {
       </div>
   );
 }
-
-{/* <button onClick={() => setPictures('Milky')}>Picture of the Day</button>
-  <button onClick={() => setPictures('Way')}>Tomorrow's Picture</button>  
-<div className="entry">
-        {pictures.map((picture, index) => {
-*/}

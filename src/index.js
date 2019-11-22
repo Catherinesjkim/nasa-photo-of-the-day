@@ -2,7 +2,7 @@ import React from "react"; // import the main react dependency
 import ReactDOM from "react-dom"; // import reactDOM
 import App from "./App"; // import the main app component
 import "./index.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <App />, // render my App component
