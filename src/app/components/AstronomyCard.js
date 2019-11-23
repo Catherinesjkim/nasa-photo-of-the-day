@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const PicDiv = styled.div`
   width: 80%;
+  margin: 0 auto;
 `
 
 const Img = styled.img`
@@ -20,6 +21,7 @@ const Section = styled.section`
 
 const InfoDiv = styled.div`
   width: 30%;
+  margin: 0 auto;
 `
 const Span = styled.span`
   font-weight: 900;
