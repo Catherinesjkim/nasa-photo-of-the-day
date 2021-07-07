@@ -1,6 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from "react"; // import the main react dependency
+import ReactDOM from "react-dom"; // import reactDOM
+import App from "./App"; // import the main app component
 import "./index.css";
-import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <App />, // render my App component
+  document.getElementById("root") // and mount it to my #root element
+); 
